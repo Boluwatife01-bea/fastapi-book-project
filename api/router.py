@@ -1,9 +1,9 @@
 from fastapi import APIRouter
 
-# Import your new books.py file
-from api.books import router as books_router
+# Import books route from api/routes
+from api.routes.books import router as books_router
 
 api_router = APIRouter()
 
-# Include the books router
-api_router.include_router(books_router, prefix="/api/v1/books", tags=["books"])
+# Register books API under /api/v1/books
+api_router.include_router(books_router, prefix="/books", tags=["books"])
